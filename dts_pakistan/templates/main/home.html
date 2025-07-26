@@ -1,5 +1,95 @@
 {% extends 'base.html' %}
-
+{% load static %}
+ <!-- {% block extra_head %}
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #fef7e7 0%, #f5f5f5 50%, #e0f2fe 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #fef7e7 0%, #ffffff 50%, #f0f9ff 100%);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-dark {
+            backdrop-filter: blur(20px);
+            background: rgba(18, 53, 36, 0.05);
+            border: 1px solid rgba(18, 53, 36, 0.1);
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #123524, #00A693, #10b981);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .process-step {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(to right, #00A693, #10b981);
+            transform: translateY(-50%);
+        }
+        
+        .process-step:last-child::before {
+            display: none;
+        }
+        
+        .floating-dna {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .test-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .test-card:hover {
+            border-color: #00A693;
+            background: linear-gradient(135deg, rgba(0, 166, 147, 0.05), rgba(16, 185, 129, 0.05));
+        }
+        
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(0, 166, 147, 0.1);
+            font-family: serif;
+        }
+    </style>
+{% endblock %}  -->
 {% block content %}
 <section id="home" class="min-h-screen gradient-bg flex items-center relative overflow-hidden">
         <!-- Background decoration -->
@@ -50,105 +140,581 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Hero Visual -->
                 <div class="relative">
-                    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
-                        <!-- Tech Stack Cards -->
-                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
-                            <i class="fab fa-python text-3xl text-phthalo mb-2"></i>
-                            <div class="text-sm font-medium text-gray-600">Python</div>
+                <div class="glass rounded-3xl p-8 hover-lift">
+                    <div class="position-relative h-96 rounded-2xl overflow-hidden">
+
+                        <!-- Video Background -->
+                        <video autoplay loop muted playsinline class="w-100 h-100 object-cover">
+                            <source src="{% static 'videos/dna_home.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <!-- Overlay for content (optional) -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between p-4"
+                            style="background: rgba(0,0,0,0.3);">
+                            <div class="text-end text-success small font-monospace animate-pulse">
+                                Analyzing: ATCG-2024-PK
+                            </div>
+                            <div class="text-start text-primary small font-monospace animate-pulse">
+                                Progress: 94.7%
+                            </div>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center mt-8">
-                            <i class="fab fa-js-square text-3xl text-yellow-500 mb-2"></i>
-                            <div class="text-sm font-medium text-gray-600">JavaScript</div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text">Real-Time Analysis</h3>
+                        <p class="text-gray-300">Advanced AI-powered genetic sequencing</p>
+                    </div>
+                </div>
+            </div>
+              
+            </div>
+        </div>
+    </section>
+     <!-- Services Section -->
+        <section id="tests" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-phthalo mb-6">Our DNA Testing Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from our comprehensive range of DNA tests, each designed to provide accurate and reliable results for your specific needs.
+                </p>
+            </div>
+            
+            <!-- DNA Tests Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Paternity Test -->
+                <div class="test-card bg-gradient-to-br from-buttersmoke to-white p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-phthalo to-dts-accent rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-baby text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-phthalo mb-4">Paternity Testing</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Determine biological relationships with 99.9% accuracy. Legal and peace-of-mind options available.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>99.9% Accuracy Rate</span>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
-                            <i class="fab fa-react text-3xl text-blue-500 mb-2"></i>
-                            <div class="text-sm font-medium text-gray-600">React</div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>24-48 Hour Results</span>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
-                            <i class="fab fa-aws text-3xl text-orange-500 mb-2"></i>
-                            <div class="text-sm font-medium text-gray-600">AWS</div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Court Admissible Reports</span>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center mt-8">
-                            <i class="fab fa-docker text-3xl text-blue-600 mb-2"></i>
-                            <div class="text-sm font-medium text-gray-600">Docker</div>
+                    </div>
+                    <div class="text-2xl font-bold text-phthalo mb-4">PKR 25,000</div>
+                    <button class="w-full bg-phthalo text-white py-3 rounded-xl font-semibold hover:bg-phthalo-light transition-colors">
+                        Order Now
+                    </button>
+                </div>
+
+                <!-- Immigration DNA -->
+                <div class="test-card bg-gradient-to-br from-buttersmoke to-white p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-dts-secondary to-dts-accent rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-passport text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-phthalo mb-4">Immigration DNA</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Prove family relationships for visa applications and immigration cases with internationally recognized results.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Embassy Approved</span>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
-                            <i class="fas fa-vial text-3xl text-phthalo mb-2"></i>
-                            <div class="text-sm font-medium text-gray-600">Testing</div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>AABB Accredited</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Chain of Custody</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-phthalo mb-4">PKR 35,000</div>
+                    <button class="w-full bg-phthalo text-white py-3 rounded-xl font-semibold hover:bg-phthalo-light transition-colors">
+                        Order Now
+                    </button>
+                </div>
+
+                <!-- Prenatal Testing -->
+                <div class="test-card bg-gradient-to-br from-buttersmoke to-white p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-dts-accent to-phthalo rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-pregnant text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-phthalo mb-4">Prenatal Testing</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Safe, non-invasive prenatal paternity testing from 7 weeks of pregnancy with maternal blood sample.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>100% Safe & Non-invasive</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>From 7 Weeks Pregnancy</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>99.9% Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-phthalo mb-4">PKR 95,000</div>
+                    <button class="w-full bg-phthalo text-white py-3 rounded-xl font-semibold hover:bg-phthalo-light transition-colors">
+                        Order Now
+                    </button>
+                </div>
+
+                <!-- Ancestry Testing -->
+                <div class="test-card bg-gradient-to-br from-buttersmoke to-white p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-dts-primary to-dts-secondary rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-phthalo mb-4">Ancestry & Genealogy</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Discover your ethnic origins and connect with relatives through comprehensive ancestry analysis.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Ethnic Composition</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Relative Matching</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Migration Patterns</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-phthalo mb-4">PKR 18,000</div>
+                    <button class="w-full bg-phthalo text-white py-3 rounded-xl font-semibold hover:bg-phthalo-light transition-colors">
+                        Order Now
+                    </button>
+                </div>
+
+                <!-- Health & Wellness -->
+                <div class="test-card bg-gradient-to-br from-buttersmoke to-white p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-phthalo mb-4">Health & Wellness</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Understand your genetic predispositions for health conditions and optimize your wellness journey.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Health Risk Assessment</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Nutrition Insights</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Fitness Recommendations</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-phthalo mb-4">PKR 28,000</div>
+                    <button class="w-full bg-phthalo text-white py-3 rounded-xl font-semibold hover:bg-phthalo-light transition-colors">
+                        Order Now
+                    </button>
+                </div>
+
+                <!-- Relationship Testing -->
+                <div class="test-card bg-gradient-to-br from-buttersmoke to-white p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-phthalo mb-4">Relationship Testing</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Determine relationships between siblings, grandparents, aunts, uncles, and other family members.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Sibling Testing</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Grandparentage Testing</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-dts-accent mr-2"></i>
+                            <span>Avuncular Testing</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-phthalo mb-4">PKR 30,000</div>
+                    <button class="w-full bg-phthalo text-white py-3 rounded-xl font-semibold hover:bg-phthalo-light transition-colors">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="process" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-phthalo mb-6">How Our DNA Testing Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our simple, secure process ensures accurate results with complete confidentiality and professional handling.
+                </p>
+            </div>
+            
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <!-- Step 1 -->
+                <div class="process-step text-center animate-fade-in-up">
+                    <div class="w-20 h-20 bg-gradient-to-br from-phthalo to-dts-accent rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        1
+                    </div>
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shopping-cart text-2xl text-phthalo"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Order Your Kit</h3>
+                    <p class="text-gray-600">Choose your test type and order online or by phone. Receive your collection kit within 24-48 hours.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-dts-secondary to-dts-accent rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        2
+                    </div>
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-paper text-2xl text-phthalo"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Collect Samples</h3>
+                    <p class="text-gray-600">Simple cheek swab collection at home or visit our collection centers. Easy, painless, and quick process.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-dts-accent to-phthalo rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        3
+                    </div>
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-2xl text-phthalo"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Send to Lab</h3>
+                    <p class="text-gray-600">Mail samples back using prepaid shipping or drop off at our collection points. Tracked and secure delivery.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step text-center animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-dts-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        4
+                    </div>
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-file-alt text-2xl text-phthalo"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Get Results</h3>
+                    <p class="text-gray-600">Receive detailed, certified results within 24-48 hours via secure email or postal mail delivery.</p>
+                </div>
+            </div>
+
+            <!-- Sample Collection Options -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-phthalo">Multiple Collection Options</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-xl">
+                            <div class="w-12 h-12 bg-gradient-to-br from-phthalo to-dts-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-home text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Home Collection Kit</h4>
+                                <p class="text-gray-600 text-sm">Simple cheek swab collection in the privacy of your home with detailed instructions.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-xl">
+                            <div class="w-12 h-12 bg-gradient-to-br from-dts-secondary to-dts-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-hospital text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Collection Centers</h4>
+                                <p class="text-gray-600 text-sm">Visit our certified collection centers across Pakistan for professional sample collection.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-xl">
+                            <div class="w-12 h-12 bg-gradient-to-br from-dts-accent to-phthalo rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user-nurse text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Mobile Collection</h4>
+                                <p class="text-gray-600 text-sm">Professional sample collection at your location by our certified phlebotomists.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Illustration -->
+                <div class="text-center">
+                    <div class="relative max-w-md mx-auto">
+                        <div class="w-64 h-64 bg-gradient-to-br from-buttersmoke to-white rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                            <div class="text-center">
+                                <i class="fas fa-dna text-6xl text-phthalo mb-4"></i>
+                                <p class="text-lg font-semibold text-gray-800">Simple & Secure</p>
+                                <p class="text-sm text-gray-600">Sample Collection</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating elements -->
+                        <div class="absolute top-8 left-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center floating-dna">
+                            <i class="fas fa-shield-alt text-dts-accent"></i>
+                        </div>
+                        <div class="absolute top-8 right-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center floating-dna" style="animation-delay: 1s;">
+                            <i class="fas fa-clock text-phthalo"></i>
+                        </div>
+                        <div class="absolute bottom-8 left-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center floating-dna" style="animation-delay: 2s;">
+                            <i class="fas fa-certificate text-dts-secondary"></i>
+                        </div>
+                        <div class="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center floating-dna" style="animation-delay: 3s;">
+                            <i class="fas fa-lock text-dts-accent"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-phthalo mb-4">Our Services</h2>
+                <h2 class="text-5xl font-bold text-phthalo mb-6">Why Choose DTS Lab Pakistan?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive digital solutions and testing services to transform your business and ensure quality at every step.
+                    We are Pakistan's most trusted DNA testing laboratory, committed to accuracy, confidentiality, and exceptional service.
                 </p>
             </div>
             
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Web Development -->
-                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
-                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-code text-white text-2xl"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Accuracy -->
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 bg-gradient-to-br from-phthalo to-dts-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-phthalo mb-4">Web Development</h3>
-                    <p class="text-gray-600 leading-relaxed">Modern, responsive web applications built with the latest technologies and best practices for optimal performance.</p>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">99.9% Accuracy</h3>
+                    <p class="text-gray-600">Industry-leading accuracy rates using the latest DNA testing technology and stringent quality controls.</p>
+                </div>
+
+                <!-- Speed -->
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 bg-gradient-to-br from-dts-secondary to-dts-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tachometer-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Fast Results</h3>
+                    <p class="text-gray-600">Get your results within 24-48 hours with rush options available for urgent cases.</p>
+                </div>
+
+                <!-- Privacy -->
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 bg-gradient-to-br from-dts-accent to-phthalo rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-shield text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Complete Privacy</h3>
+                    <p class="text-gray-600">Strict confidentiality protocols ensure your personal information and results remain completely private.</p>
+                </div>
+
+                <!-- Accreditation -->
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-dts-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-phthalo mb-3">Internationally Accredited</h3>
+                    <p class="text-gray-600">AABB accredited laboratory with internationally recognized quality standards and certifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-phthalo mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Thousands of satisfied clients trust DTS Lab Pakistan for their DNA testing needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-phthalo to-dts-accent rounded-full flex items-center justify-center text-white font-bold">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-800">Ahmad Hassan</div>
+                            <div class="text-sm text-gray-600">Paternity Test Client</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        The process was incredibly simple and professional. I received my results within 24 hours and the report was very detailed and easy to understand.
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-dts-secondary to-dts-accent rounded-full flex items-center justify-center text-white font-bold">
+                            S
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-800">Sarah Khan</div>
+                            <div class="text-sm text-gray-600">Immigration DNA Client</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        DTS Lab helped me with my immigration case. Their embassy-approved reports were accepted immediately and the staff was very supportive throughout.
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-dts-accent to-phthalo rounded-full flex items-center justify-center text-white font-bold">
+                            M
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-800">Maria Ahmed</div>
+                            <div class="text-sm text-gray-600">Ancestry Test Client</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        I was amazed by the detailed ancestry report. It helped me discover my ethnic background and connect with distant relatives. Highly recommended!
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-phthalo mb-6">Get Started Today</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to order your DNA test? Contact us for a free consultation or place your order online.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="glass-dark p-8 rounded-3xl">
+                        <h3 class="text-2xl font-semibold text-phthalo mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-phthalo to-dts-accent rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Laboratory Address</div>
+                                    <div class="text-gray-600">Main Boulevard, Shekhupura, Punjab, Pakistan</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-dts-secondary to-dts-accent rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Phone</div>
+                                    <div class="text-gray-600">+92 XXX XXXXXXX</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-dts-accent to-phthalo rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Email</div>
+                                    <div class="text-gray-600">info@dtslabpakistan.com</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-dts-primary rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Hours</div>
+                                    <div class="text-gray-600">Mon-Sat: 9:00 AM - 6:00 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Order -->
+                    <div class="glass-effect p-8 rounded-3xl text-center">
+                        <h4 class="text-xl font-bold text-phthalo mb-4">Quick Order</h4>
+                        <p class="text-gray-600 mb-6">Call us now to place your order over the phone</p>
+                        <a href="tel:+92XXXXXXXXX" class="inline-flex items-center justify-center w-full bg-gradient-to-r from-phthalo to-dts-accent text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>
+                            Call Now: +92 XXX XXXXXXX
+                        </a>
+                    </div>
                 </div>
                 
-                <!-- Mobile Development -->
-                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
-                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                <!-- Contact Form -->
+                <div class="glass-dark p-8 rounded-3xl">
+                    <h3 class="text-2xl font-semibold text-phthalo mb-6">Send us a Message</h3>
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="First Name" class="px-4 py-3 rounded-xl border border-gray-300 focus:border-phthalo focus:outline-none focus:ring-1 focus:ring-phthalo bg-white">
+                            <input type="text" placeholder="Last Name" class="px-4 py-3 rounded-xl border border-gray-300 focus:border-phthalo focus:outline-none focus:ring-1 focus:ring-phthalo bg-white">
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="email" placeholder="Email Address" class="px-4 py-3 rounded-xl border border-gray-300 focus:border-phthalo focus:outline-none focus:ring-1 focus:ring-phthalo bg-white">
+                            <input type="tel" placeholder="Phone Number" class="px-4 py-3 rounded-xl border border-gray-300 focus:border-phthalo focus:outline-none focus:ring-1 focus:ring-phthalo bg-white">
+                        </div>
+                        <select class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-phthalo focus:outline-none focus:ring-1 focus:ring-phthalo bg-white">
+                            <option>Select Test Type</option>
+                            <option>Paternity Testing</option>
+                            <option>Immigration DNA</option>
+                            <option>Prenatal Testing</option>
+                            <option>Ancestry Testing</option>
+                            <option>Health & Wellness</option>
+                            <option>Relationship Testing</option>
+                        </select>
+                        <textarea placeholder="Your Message or Questions" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-phthalo focus:outline-none focus:ring-1 focus:ring-phthalo resize-none bg-white"></textarea>
+                        <button class="w-full bg-gradient-to-r from-phthalo to-dts-accent text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
                     </div>
-                    <h3 class="text-xl font-semibold text-phthalo mb-4">Mobile Development</h3>
-                    <p class="text-gray-600 leading-relaxed">Native and cross-platform mobile applications for iOS and Android with exceptional user experiences.</p>
-                </div>
-                
-                <!-- Testing Services -->
-                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
-                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-vial text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-phthalo mb-4">Quality Testing</h3>
-                    <p class="text-gray-600 leading-relaxed">Comprehensive testing solutions including performance, security, automation, and user acceptance testing.</p>
-                </div>
-                
-                <!-- Cloud Solutions -->
-                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
-                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-cloud text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-phthalo mb-4">Cloud Solutions</h3>
-                    <p class="text-gray-600 leading-relaxed">Scalable cloud infrastructure and services to power your digital transformation journey.</p>
-                </div>
-                
-                <!-- Digital Strategy -->
-                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
-                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-rocket text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-phthalo mb-4">Digital Strategy</h3>
-                    <p class="text-gray-600 leading-relaxed">Complete digital transformation consulting and strategic planning to accelerate your business growth.</p>
-                </div>
-                
-                <!-- DevOps -->
-                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
-                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-phthalo mb-4">DevOps Solutions</h3>
-                    <p class="text-gray-600 leading-relaxed">Streamlined development and deployment processes with continuous integration and delivery pipelines.</p>
                 </div>
             </div>
         </div>
