@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="home" class="min-h-screen gradient-bg flex items-center relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-phthalo opacity-5 animate-float"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-green-500 opacity-5 animate-pulse-slow"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-8 animate-fade-in-up">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-6xl font-bold text-phthalo leading-tight">
+                            Digital Transformation
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-phthalo">
+                                Solutions
+                            </span>
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                            Empowering businesses across Pakistan with cutting-edge technology, comprehensive testing solutions, and innovative digital transformation services.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services" class="inline-flex items-center justify-center px-8 py-4 bg-phthalo text-white font-semibold rounded-full hover:bg-phthalo-light transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            Explore Services
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-phthalo text-phthalo font-semibold rounded-full hover:bg-phthalo hover:text-white transition-all duration-300">
+                            Get Free Consultation
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-8 pt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-phthalo">50+</div>
+                            <div class="text-sm text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-phthalo">15+</div>
+                            <div class="text-sm text-gray-600">Testing Types</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-phthalo">99%</div>
+                            <div class="text-sm text-gray-600">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual -->
+                <div class="relative">
+                    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                        <!-- Tech Stack Cards -->
+                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
+                            <i class="fab fa-python text-3xl text-phthalo mb-2"></i>
+                            <div class="text-sm font-medium text-gray-600">Python</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center mt-8">
+                            <i class="fab fa-js-square text-3xl text-yellow-500 mb-2"></i>
+                            <div class="text-sm font-medium text-gray-600">JavaScript</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
+                            <i class="fab fa-react text-3xl text-blue-500 mb-2"></i>
+                            <div class="text-sm font-medium text-gray-600">React</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
+                            <i class="fab fa-aws text-3xl text-orange-500 mb-2"></i>
+                            <div class="text-sm font-medium text-gray-600">AWS</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center mt-8">
+                            <i class="fab fa-docker text-3xl text-blue-600 mb-2"></i>
+                            <div class="text-sm font-medium text-gray-600">Docker</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-all duration-300 text-center">
+                            <i class="fas fa-vial text-3xl text-phthalo mb-2"></i>
+                            <div class="text-sm font-medium text-gray-600">Testing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-phthalo mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive digital solutions and testing services to transform your business and ensure quality at every step.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Web Development -->
+                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
+                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-phthalo mb-4">Web Development</h3>
+                    <p class="text-gray-600 leading-relaxed">Modern, responsive web applications built with the latest technologies and best practices for optimal performance.</p>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
+                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-phthalo mb-4">Mobile Development</h3>
+                    <p class="text-gray-600 leading-relaxed">Native and cross-platform mobile applications for iOS and Android with exceptional user experiences.</p>
+                </div>
+                
+                <!-- Testing Services -->
+                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
+                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-vial text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-phthalo mb-4">Quality Testing</h3>
+                    <p class="text-gray-600 leading-relaxed">Comprehensive testing solutions including performance, security, automation, and user acceptance testing.</p>
+                </div>
+                
+                <!-- Cloud Solutions -->
+                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
+                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cloud text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-phthalo mb-4">Cloud Solutions</h3>
+                    <p class="text-gray-600 leading-relaxed">Scalable cloud infrastructure and services to power your digital transformation journey.</p>
+                </div>
+                
+                <!-- Digital Strategy -->
+                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
+                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-phthalo mb-4">Digital Strategy</h3>
+                    <p class="text-gray-600 leading-relaxed">Complete digital transformation consulting and strategic planning to accelerate your business growth.</p>
+                </div>
+                
+                <!-- DevOps -->
+                <div class="bg-buttersmoke p-8 rounded-3xl hover-lift transition-all duration-300 border border-phthalo/10 group">
+                    <div class="w-16 h-16 bg-phthalo rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-phthalo mb-4">DevOps Solutions</h3>
+                    <p class="text-gray-600 leading-relaxed">Streamlined development and deployment processes with continuous integration and delivery pipelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
